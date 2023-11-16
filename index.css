@@ -1,0 +1,64 @@
+body {
+    font-family: Inter;
+    color: #D5D4D8;
+    font-size: 14px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    width: 446px;
+    height: 446px;
+    padding: 52px;
+    margin: 50px auto;
+    background-color: #1F2937;
+}
+
+h1 {
+    font-family: Karla;
+    color: white;
+    font-size: 40px;
+    margin: 0;
+}
+
+button {
+    width: 191px;
+    height: 42px;
+    background-color: #10B981;
+    font-family: Inter;
+    font-size: 16px;
+    color: white;
+    border: 0px;
+    border-radius: 6px;
+    margin-top: 40px;
+    font-weight: bold;
+}
+
+#line {
+    width: 446px;
+    height: 1;
+    border: 0;
+    border-top: 1px solid #2F3E53;
+    margin: 40px 0;
+}
+
+.fields {
+    display: flex;
+    justify-content: space-between;
+}
+
+.passField {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 211px;
+
+    height: 39px;
+    background-color: #273549;
+    border-radius: 6px;
+    color: #55F991;
+    font-weight: bold;
+    font-size: 16px;
+}
