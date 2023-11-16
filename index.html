@@ -4,18 +4,29 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&family=Karla:wght@800&display=swap" rel="stylesheet">
+        <title>Password Generator</title>
     </head>
     <body>
         <div class="container">
             <h1>Generate a</h1>
-            <h1 style="color:#4ADF86">random password</h1>
+            <h1 style="color:#7C3AED">random password</h1>
             <h2>Never use an insecure password again.</h2>
+            <input type="range" min="8" max="32" value="15" class="slider" id="pass-length">
+            <p id="output-length"></p>
+            <div class="checkboxes">
+                <input type="checkbox" id="symbol-check">
+                <label for="symbol-check">Use symbols?</label>
+                <input type="checkbox" id="number-check">
+                <label for="number-check">Use numbers?</label>
+            </div>
             <button onclick="genPass()">Generate passwords</button>
             <div id="line"></div>
             <div class="fields">
                 <div class="passField" id="pass-one"></div>
                 <div class="passField" id="pass-two"></div>
             </div>
+            <p id="copy-confirm">Click to copy passwords!</p>
+            <!-- I added this default text above because I didn't want elements to be pushed around by generated text on copy. Any way I can prevent this for future cases?-->
             <script src="index.js"></script>
         </div>
     </body>
