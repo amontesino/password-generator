@@ -2,7 +2,7 @@ body {
     font-family: Inter;
     color: #374151;
     font-size: 14px;
-    background: radial-gradient(#4C1D95, #111827);
+    background: radial-gradient(#EF233C, #111827);
 }
 
 .container {
@@ -14,9 +14,9 @@ body {
     height: 446px;
     padding: 52px;
     margin: 50px auto;
-    background: #ECFDF5;
+    background: #F5F3F4;
     border-radius: 52px;
-    border-bottom: 10px solid #6D28D9;
+    border-bottom: 10px solid #D90429;
 }
 
 .slider {
@@ -28,14 +28,14 @@ body {
 
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
-    background: #6D28D9;
+    background: #D90429;
     cursor: pointer;
     border: 0;
 }
 
 .slider::-moz-range-thumb {
     -webkit-appearance: none;
-    background: #6D28D9;
+    background: #D90429;
     cursor: pointer;
     border: 0;
 }
@@ -56,7 +56,7 @@ h1 {
 button {
     width: 191px;
     height: 42px;
-    background: #6D28D9;
+    background: #D90429;
     font-family: Inter;
     font-size: 16px;
     color: white;
@@ -70,7 +70,7 @@ button {
     width: 446px;
     height: 1;
     border: 0;
-    border-top: 1px solid #A78BFA;
+    border-top: 1px solid #EDF2F4;
     margin: 20px 0;
 }
 
@@ -85,7 +85,7 @@ button {
     align-items: center;
     width: 211px;
     height: 39px;
-    background: #A7F3D0;
+    background: #ffccd5;
     border-radius: 6px;
     color: #111827;
     font-weight: bold;
