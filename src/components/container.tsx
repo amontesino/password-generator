@@ -1,27 +1,34 @@
-import { useEffect } from "react"
-import { characters } from "../data/characters"
+import { useEffect, useRef, useState } from "react"
+import { characters, charactersNoNumbers, charactersNoNumbersNoSymbols, charactersNoSymbols } from "../data/characters"
 
 export default function Container() {
-
-    let parsedCharacters: Array<string> = characters
+    const [numberCheck, setNumberCheck] = useState(false)
+    const [symbolCheck, setSymbolCheck] = useState(false)
+    const [characterArray, setCharacterArray] = useState([])
 
     function genPass(array: Array<string>) {
-        console.log(array)
+        // console.log(array)
+        // console.log(`symbol check: ${symbolCheck}, number check: ${numberCheck}`)
     }
 
     useEffect(() => {
-        parsedCharacters = characters
+        console.log(characterArray)
+        console.log(`symbol check: ${symbolCheck}, number check: ${numberCheck}`)
 
-        if (document.querySelector('#symbol-check')?.ariaChecked && !document.querySelector('#number-check')?.ariaChecked) {
-            parsedCharacters.splice(62, 29)
+        return () => {
+            if (symbolCheck === false && numberCheck) {
+                setCharacterArray(charactersNoSymbols)
+            } else
+            if (numberCheck === false && symbolCheck) {
+                setCharacterArray(charactersNoNumbers)
+            } else 
+            if (numberCheck === false && symbolCheck === false) {
+                setCharacterArray(charactersNoNumbersNoSymbols)
+            } else {
+                setCharacterArray(characters)
+            }
         }
-        if (document.querySelector('#number-check')?.ariaChecked && !document.querySelector('#symbol-check')?.ariaChecked) {
-            parsedCharacters.splice(52, 10)
-        }
-        if (document.querySelector('#number-check')?.ariaChecked && document.querySelector('#symbol-check')?.ariaChecked) {
-            parsedCharacters.splice(52, 39)
-        }
-    }, [])
+    }, [numberCheck, symbolCheck])
 
     return (
         <div className="container">
@@ -31,12 +38,12 @@ export default function Container() {
             <input type="range" min="8" max="32" placeholder="15" className="slider" id="pass-length" />
             <p id="output-length"></p>
             <div className="checkboxes">
-                <input type="checkbox" id="symbol-check" />
+                <input type="checkbox" id="symbol-check" onChange={() => setSymbolCheck(prevCheck => !prevCheck)} />
                 <label htmlFor="symbol-check">Use symbols?</label>
-                <input type="checkbox" id="number-check" />
+                <input type="checkbox" id="number-check" onChange={() => setNumberCheck(prevCheck => !prevCheck)} />
                 <label htmlFor="number-check">Use numbers?</label>
             </div>
-            <button onClick={() => genPass(parsedCharacters)}>Generate passwords</button>
+            <button onClick={() => genPass(characterArray)}>Generate passwords</button>
             <div id="line"></div>
             <div className="fields">
                 <div className="passField" id="pass-one"></div>
