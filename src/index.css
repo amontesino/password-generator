@@ -2,7 +2,19 @@ body {
   font-family: Inter;
   color: #374151;
   font-size: 14px;
-  background: radial-gradient(#EF233C, #111827);
+  background: rgb(15, 0, 24);
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(15, 0, 24, 1) 0%,
+    rgba(24, 0, 38, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(15, 0, 24, 1) 0%,
+    rgba(24, 0, 38, 1) 100%
+  );
+  background: linear-gradient(90deg, rgba(15, 0, 24, 1) 0%, #180026 100%);
+  color: #eae6e5;
 }
 
 .container {
@@ -14,37 +26,42 @@ body {
   height: 446px;
   padding: 52px;
   margin: 50px auto;
-  background: #F5F3F4;
+  background: #151612;
   border-radius: 52px;
-  border-bottom: 10px solid #D90429;
+  border-bottom: 10px solid #9857bd;
 }
 
 .slider {
   -webkit-appearance: none;
-  background-color: #D5D4D8;
+  background-color: #4e4d52;
   height: 6px;
   border-radius: 3px;
 }
 
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
-  background: #D90429;
+  background: #9857bd;
   cursor: pointer;
   border: 0;
 }
 
 .slider::-moz-range-thumb {
   -webkit-appearance: none;
-  background: #D90429;
+  background: #9857bd;
   cursor: pointer;
   border: 0;
 }
 
 h1 {
   font-family: Karla;
-  color: #111827;
+  color: #fff;
   font-size: 40px;
   margin: 0;
+  text-align: left;
+}
+
+.header-purple {
+  color: #9857bd;
 }
 
 .checkboxes {
@@ -56,7 +73,7 @@ h1 {
 button {
   width: 191px;
   height: 42px;
-  background: #D90429;
+  background: #5a3072;
   font-family: Inter;
   font-size: 16px;
   color: white;
@@ -70,7 +87,7 @@ button {
   width: 446px;
   height: 1;
   border: 0;
-  border-top: 1px solid #EDF2F4;
+  border-top: 1px solid #949494;
   margin: 20px 0;
 }
 
@@ -79,15 +96,20 @@ button {
   justify-content: space-between;
 }
 
+#symbol-check input:checked ~ .checkmark,
+#number-check input:checked ~ .checkmark {
+  background: #9857bd;
+}
+
 .passField {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 211px;
   height: 39px;
-  background: #ffccd5;
+  background: #443050;
   border-radius: 6px;
-  color: #111827;
+  color: #eae6e5;
   font-weight: bold;
   font-size: 16px;
   overflow: hidden;
