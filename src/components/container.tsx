@@ -47,8 +47,9 @@ export default function Container() {
       <input
         type='range'
         min='8'
-        max='32'
+        max='40'
         placeholder={JSON.stringify(length)}
+        defaultValue={JSON.stringify(length)}
         className='slider'
         id='pass-length'
         onChange={(e) => setLength(e.target.value)}
