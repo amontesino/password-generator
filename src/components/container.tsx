@@ -53,7 +53,7 @@ export default function Container() {
         id='pass-length'
         onChange={(e) => setLength(e.target.value)}
       />
-      <p id='output-length'></p>
+      <p id='output-length'>Length: {length} characters</p>
       <div className='checkboxes'>
         <label htmlFor='symbol-check'>
           <input
