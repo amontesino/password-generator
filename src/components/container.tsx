@@ -56,7 +56,7 @@ export default function Container() {
       />
       <p id='output-length'>Length: {length} characters</p>
       <div className='checkboxes'>
-        <label htmlFor='symbol-check'>
+        <label className="checkbox" htmlFor='symbol-check'>
           <input
             type='checkbox'
             id='symbol-check'
@@ -65,7 +65,7 @@ export default function Container() {
           <span className='checkmark' />
           Use symbols?
         </label>
-        <label htmlFor='number-check'>
+        <label className="checkbox" htmlFor='number-check'>
           <input
             type='checkbox'
             id='number-check'
