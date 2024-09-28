@@ -4,7 +4,7 @@ import { characters } from "../data/characters";
 export default function Container() {
   const [numberCheck, setNumberCheck] = useState(false);
   const [symbolCheck, setSymbolCheck] = useState(false);
-  const [passwords, setPasswords] = useState([]);
+  const [passwords, setPasswords] = useState<string[]>([]);
   const [length, setLength] = useState(15);
 
   const genPass = () => {
@@ -52,7 +52,7 @@ export default function Container() {
         defaultValue={JSON.stringify(length)}
         className='slider'
         id='pass-length'
-        onChange={(e) => setLength(e.target.value)}
+        onChange={(e) => setLength(Number(e.target.value))}
       />
       <p id='output-length'>Length: {length} characters</p>
       <div className='checkboxes'>
