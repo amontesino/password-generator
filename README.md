@@ -1,6 +1,6 @@
 # Password Generator
 
-This is a project that originated from the (Scrimba Front End Developer Career Path)[http://scrimba.com] that I have made further enhancements to.
+This is a project that originated from the [Scrimba Front End Developer Career Path](http://scrimba.com) that I have made further enhancements to.
 
 The base project guidelines were:
 -Follow a Figma design
