@@ -6,6 +6,7 @@ export default function Container() {
   const [symbolCheck, setSymbolCheck] = useState(false);
   const [passwords, setPasswords] = useState<string[]>([]);
   const [length, setLength] = useState(15);
+  const [copied, setCopied] = useState(false);
 
   const genPass = () => {
     // Uppercase and lowercase letters
@@ -38,6 +39,12 @@ export default function Container() {
     console.log(passwordOne, passwordTwo);
     setPasswords([passwordOne, passwordTwo]);
   };
+
+  function copyPassword(password: string) {
+    navigator.clipboard.writeText(password)
+    setCopied(true)
+    setTimeout(() => {setCopied(false)}, 3000)
+  }
 
   return (
     <div className='container'>
@@ -76,24 +83,24 @@ export default function Container() {
         </label>
       </div>
       <button onClick={() => genPass()}>Generate passwords</button>
-      <div id='line'></div>
+      <div id='line' />
       <div className='fields'>
         <div
-          className='passField'
+          className={`passField ${passwords[0] ? 'hover' : ''}`}
           id='pass-one'
-          onClick={() => navigator.clipboard.writeText(passwords[0])}
+          onClick={() => copyPassword(passwords[0])}
         >
           {passwords[0]}
         </div>
         <div
-          className='passField'
+          className={`passField ${passwords[1] ? 'hover' : ''}`}
           id='pass-two'
-          onClick={() => navigator.clipboard.writeText(passwords[1])}
+          onClick={() => copyPassword(passwords[1])}
         >
           {passwords[1]}
         </div>
       </div>
-      <p id='copy-confirm'>Click to copy passwords!</p>
+      <p id='copy-confirm'>{copied ? 'Copied!' : 'Click to copy passwords!'}</p>
       <script src='index.js'></script>
     </div>
   );
