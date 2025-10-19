@@ -33,6 +33,7 @@ body {
 
 .slider {
   -webkit-appearance: none;
+  appearance: none;
   background-color: #4e4d52;
   height: 6px;
   border-radius: 3px;
@@ -47,6 +48,7 @@ body {
 
 .slider::-moz-range-thumb {
   -webkit-appearance: none;
+  appearance: none;
   background: #9857bd;
   cursor: pointer;
   border: 0;
@@ -189,7 +191,6 @@ button {
 
   body,
   html {
-    margin: ;
     padding: 0;
     overflow: hidden;
   }
